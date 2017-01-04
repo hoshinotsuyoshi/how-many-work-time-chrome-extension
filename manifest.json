@@ -1,0 +1,29 @@
+{
+  "name": "俺用ジョブカン",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "ジョブカンの何かを便利にします",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "scripts": ["js/badge.js"]
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "俺用ジョブカン"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://ssl.jobcan.jp/*"],
+      "css": ["css/style.css"]
+    }
+  ],
+  "content_security_policy": "script-src 'self'; object-src 'self'; connect-src https://ssl.jobcan.jp/"
+}
